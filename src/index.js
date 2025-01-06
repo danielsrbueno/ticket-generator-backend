@@ -7,15 +7,16 @@ require('./config/dbConfig')
 const app = express()
 
 const corsOptions = {
-    origin: ['http://localhost:3000'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 app.use(cors(corsOptions))
+app.options('*', cors(corsOptions))
 app.use(express.json())
 app.use(routes)
 
-port = process.env.PORT || 3333
+const port = process.env.PORT || 3333
 
 app.listen(port)
