@@ -16,4 +16,6 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use(routes)
 
+port = process.env.PORT || 3333
+
 app.listen(port)
