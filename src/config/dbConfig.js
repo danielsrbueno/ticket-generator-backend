@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
 
-const user = process.env.DB_USER
-const password = process.env.DB_PASS
-const dbName = process.env.DB_NAME
-
-const config = `mongodb+srv://${user}:${password}@${dbName}.mt53o.mongodb.net/?retryWrites=true&w=majority&appName=${dbName}`
+const config = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_NAME}.mt53o.mongodb.net/?retryWrites=true&w=majority&appName=${process.env.DB_NAME}`
 
 const con = mongoose.connect(config, {
     useNewUrlParser: true,
