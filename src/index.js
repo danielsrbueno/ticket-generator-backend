@@ -5,7 +5,7 @@ const routes = require('./routes')
 require('./config/dbConfig')
 
 const app = express()
-const port = process.env.PORT || 3333;
+const port = 3000;
 
 const corsOptions = {
     origin: [`http://localhost:3000`, process.env.FRONTEND_URL],
